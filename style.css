@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  background: #101010;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-grid {
+  font-family: "Press Start 2P", serif;
+  display: grid;
+  /* altere caso mude o número de bombas */
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 400px;
+  height: 400px;
+}
+
+.cell {
+  background-color: #c8c8c8;
+  border: 1px solid #bfbfbf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: 800;
+}
+
+/* not revealed cell */
+.cell:not(.revealed) {
+  background-color: #bfbfbf;
+  border: outset 4px;
+}
+
+.cell:not(.revealed).pressed {
+  border: inset 2px;
+}
+
+/* revealed cell */
+.cell.revealed {
+  background-color: #c8c8c8;
+  border: 1px solid #bfbfbf;
+}
+
+.cell.flagged {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2215%22%20height%3D%2221%22%20viewBox%3D%220%200%2015%2021%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M6.78074%2016.9787V1.07084H8.41272V16.9787H6.78074Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M8.41283%200L0%205.35362L8.41283%2010.7072V0Z%22%20fill%3D%22%23FF0000%22%2F%3E%0A%3Cpath%20d%3D%22M11.4426%2015.3981H3.7509V17.6416H11.4426V15.3981Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M14.848%2017.3699H0.34534V20.2419H14.848V17.3699Z%22%20fill%3D%22black%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+.cell.mine {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M13%207.5C13%2010.5376%2010.5376%2013%207.5%2013C4.46243%2013%202%2010.5376%202%207.5C2%204.46243%204.46243%202%207.5%202C10.5376%202%2013%204.46243%2013%207.5Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M7%2015V0H8V15H7Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12.3033%2012.8035L1.6967%202.19685L2.40381%201.48975L13.0104%2012.0963L12.3033%2012.8035Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12.8035%201.6967L2.19685%2012.3033L1.48975%2011.5962L12.0963%200.98959L12.8035%201.6967Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M15%208H0V7H15V8Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M7%205.5C7%206.32843%206.32843%207%205.5%207C4.67157%207%204%206.32843%204%205.5C4%204.67157%204.67157%204%205.5%204C6.32843%204%207%204.67157%207%205.5Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+.cell.mine-clicked.mine {
+  background-color: #ff0000;
+}
+
+.cell.mine-count-0 {
+  color: transparent;
+}
+
+.cell.mine-count-1 {
+  color: #0000ff;
+}
+
+.cell.mine-count-2 {
+  color: #00a800;
+}
+
+.cell.mine-count-3 {
+  color: #ff0000;
+}
+
+.cell.mine-count-4 {
+  color: #000080;
+}
+
+.cell.mine-count-5 {
+  color: #800000;
+}
+
+.cell.mine-count-6 {
+  color: #008080;
+}
+
+.cell.mine-count-7 {
+  color: #000000;
+}
+
+.cell.mine-count-8 {
+  color: #5b5b5b;
+}
